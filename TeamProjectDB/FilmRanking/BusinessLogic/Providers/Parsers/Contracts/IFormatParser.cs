@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FilmRanking.BusinessLogic.Providers.Contracts
+namespace FilmRanking.BusinessLogic.Providers.Parsers.Contracts
 {
-    public interface IReader
+    public interface IFormatParser
     {
-        string Read();
+        void Parse();
     }
 }

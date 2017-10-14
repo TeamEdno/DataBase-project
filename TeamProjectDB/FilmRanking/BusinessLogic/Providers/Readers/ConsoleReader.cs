@@ -9,9 +9,9 @@ namespace FilmRanking.BusinessLogic.Providers.Readers
 {
     public class ConsoleReader : IReader
     {
-        public void Read()
+        public string  Read()
         {
-            Console.ReadLine();
+            return Console.ReadLine();
         }
     }
 }

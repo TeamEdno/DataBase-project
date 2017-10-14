@@ -1,15 +1,15 @@
-﻿using FilmRanking.Commands.Contracts;
+﻿using FilmRanking.BusinessLogic.Providers.Parsers.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FilmRanking.Commands.Listing
+namespace FilmRanking.BusinessLogic.Providers.Parsers
 {
-    public class ListCommand : ICommand
+    class PDFParser : IFormatParser
     {
-        public string Execute(IList<string> parameters)
+        public void Parse()
         {
             throw new NotImplementedException();
         }

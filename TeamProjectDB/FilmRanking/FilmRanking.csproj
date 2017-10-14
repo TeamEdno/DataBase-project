@@ -44,14 +44,20 @@
   <ItemGroup>
     <Compile Include="BusinessLogic\Engine.cs" />
     <Compile Include="BusinessLogic\Contracts\IEngine.cs" />
+    <Compile Include="BusinessLogic\Providers\Parsers\CommandParser.cs" />
     <Compile Include="BusinessLogic\Providers\Factories\Contracts\ICommandFactory.cs" />
     <Compile Include="BusinessLogic\Providers\Contracts\IReader.cs" />
     <Compile Include="BusinessLogic\Providers\Contracts\IWriter.cs" />
     <Compile Include="BusinessLogic\Providers\Factories\CommandFactory.cs" />
+    <Compile Include="BusinessLogic\Providers\Parsers\Contracts\ICommandParser.cs" />
+    <Compile Include="BusinessLogic\Providers\Parsers\Contracts\IFormatParser.cs" />
+    <Compile Include="BusinessLogic\Providers\Parsers\JSONParser.cs" />
+    <Compile Include="BusinessLogic\Providers\Parsers\PDFParser.cs" />
+    <Compile Include="BusinessLogic\Providers\Parsers\XMLParser.cs" />
     <Compile Include="BusinessLogic\Providers\Readers\ConsoleReader.cs" />
     <Compile Include="BusinessLogic\Providers\Writers\ConsoleWriter.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
-    <Compile Include="Commands\Listing\ListCommand.cs" />
+    <Compile Include="Commands\Listing\ListFilmCommand.cs" />
     <Compile Include="Commands\Modifying\AddActorToFilmCommand.cs" />
     <Compile Include="Commands\Modifying\CreateFilmCommand.cs" />
     <Compile Include="Commands\Modifying\DeleteFilmCommand.cs" />
