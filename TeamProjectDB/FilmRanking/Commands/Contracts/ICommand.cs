@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FilmRanking.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace FilmRanking.Commands.Contracts
 {
     public interface ICommand
     {
-        string Execute(IList<string> parameters);
+        void Execute(IList<string> parameters);
     }
 }

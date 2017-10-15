@@ -16,6 +16,8 @@ namespace FilmRanking.Models
         
         public int Id { get; set; }
 
+        public double Rate { get; set; }
+
         public Genre Genre { get; set; }
 
         public string Title { get; set; }

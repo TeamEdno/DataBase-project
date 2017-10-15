@@ -9,7 +9,7 @@ namespace FilmRanking.Commands.Listing
 {
     class CreateFilmCommand : ICommand
     {
-        public string Execute(IList<string> parameters)
+        public void Execute(IList<string> parameters)
         {
             throw new NotImplementedException();
         }

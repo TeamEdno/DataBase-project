@@ -9,7 +9,7 @@ namespace FilmRanking.Commands.Modifying
 {
     class DeleteFilmCommand : ICommand
     {
-        public string Execute(IList<string> parameters)
+        public void Execute(IList<string> parameters)
         {
             throw new NotImplementedException();
         }

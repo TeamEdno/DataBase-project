@@ -74,6 +74,10 @@
     <Compile Include="Migrations\201710141644402_Initial Migration to create DB.Designer.cs">
       <DependentUpon>201710141644402_Initial Migration to create DB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710151018282_Added rate property to movie.cs" />
+    <Compile Include="Migrations\201710151018282_Added rate property to movie.Designer.cs">
+      <DependentUpon>201710151018282_Added rate property to movie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Actor.cs" />
     <Compile Include="Models\Director.cs" />
@@ -90,6 +94,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710141644402_Initial Migration to create DB.resx">
       <DependentUpon>201710141644402_Initial Migration to create DB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710151018282_Added rate property to movie.resx">
+      <DependentUpon>201710151018282_Added rate property to movie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,5 @@
 ﻿using FilmRanking.Commands.Contracts;
+using FilmRanking.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,18 @@ namespace FilmRanking.Commands.Modifying
 {
     class AddActorToFilmCommand : ICommand
     {
-        public string Execute(IList<string> parameters)
+        private readonly FilmRankingContext context;
+
+        public AddActorToFilmCommand(FilmRankingContext context)
         {
-            throw new NotImplementedException();
+            this.context = context;
+        }
+        public void Execute(IList<string> parameters)
+        {
+            using (this.context)
+            {
+                // To be implemented...
+            }
         }
     }
 }
