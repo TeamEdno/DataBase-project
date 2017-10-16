@@ -25,12 +25,13 @@ namespace FilmRanking.Models
         [NotMapped]
         public virtual ICollection<Actor> Actors { get; set; }
 
-        [NotMapped]
-        public  Director Director { get; set; }
+        public int? DirectorId { get; set; }
 
-        [NotMapped]
-        public Studio Studio { get; set; }
+        public virtual Director Director { get; set; }
 
+        public int? StudioId { get; set; }
+
+        public virtual Studio Studio { get; set; }
         
     }
 }

@@ -16,6 +16,9 @@ namespace FilmRanking.Data
         }
 
         public IDbSet<Film> Films { get; set; }
+        public IDbSet<Director> Directors { get; set; }
+        public IDbSet<Studio> Studios { get; set; }
+
 
     }
 }

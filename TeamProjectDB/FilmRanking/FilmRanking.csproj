@@ -78,6 +78,10 @@
     <Compile Include="Migrations\201710151018282_Added rate property to movie.Designer.cs">
       <DependentUpon>201710151018282_Added rate property to movie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710160916103_Studions Directors validations.cs" />
+    <Compile Include="Migrations\201710160916103_Studions Directors validations.Designer.cs">
+      <DependentUpon>201710160916103_Studions Directors validations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Actor.cs" />
     <Compile Include="Models\Director.cs" />
@@ -97,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710151018282_Added rate property to movie.resx">
       <DependentUpon>201710151018282_Added rate property to movie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710160916103_Studions Directors validations.resx">
+      <DependentUpon>201710160916103_Studions Directors validations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
