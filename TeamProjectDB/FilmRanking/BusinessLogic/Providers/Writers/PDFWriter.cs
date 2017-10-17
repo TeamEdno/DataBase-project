@@ -1,4 +1,5 @@
-﻿using FilmRanking.BusinessLogic.Providers.Parsers.Contracts;
+﻿using FilmRanking.BusinessLogic.Providers.Contracts;
+using FilmRanking.BusinessLogic.Providers.Parsers.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace FilmRanking.BusinessLogic.Providers.Parsers
 {
-    class PDFParser : IFormatParser
+    class PDFParser : IWriter
     {
-        public void Parse()
+        public void Write()
         {
             throw new NotImplementedException();
         }

@@ -1,6 +1,7 @@
 ﻿using FilmRanking.Models.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -19,10 +20,12 @@ namespace FilmRanking.Models
         
         public int Id { get; set; }
 
-        public double Rate { get; set; }
-
+        [Range(1.0, 5.0, ErrorMessage = "The rate is not in range [1:5]!")]
+        public ICollection<double> Rate { get; set; }
+        
         public Genre Genre { get; set; }
 
+        [StringLength(50, MinimumLength = 1, ErrorMessage = "First title is not in range[1:50]")]
         public string Title { get; set; }
 
         public virtual ICollection<Actor> Actors
