@@ -18,7 +18,7 @@ namespace FilmRanking
 
             using (var context = new FilmRankingContext())
             {
-                context.Films.ToList();
+                context.Actors.ToList();
 
                 //var studio = new Models.Studio();
                 //studio.Name = "PeshoEnt";

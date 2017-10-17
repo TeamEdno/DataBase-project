@@ -85,6 +85,14 @@
     <Compile Include="Migrations\201710160916103_Studions Directors validations.Designer.cs">
       <DependentUpon>201710160916103_Studions Directors validations.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710170846442_initial actors.cs" />
+    <Compile Include="Migrations\201710170846442_initial actors.Designer.cs">
+      <DependentUpon>201710170846442_initial actors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710170850141_m2m actorsFilms.cs" />
+    <Compile Include="Migrations\201710170850141_m2m actorsFilms.Designer.cs">
+      <DependentUpon>201710170850141_m2m actorsFilms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Actor.cs" />
     <Compile Include="Models\Director.cs" />
@@ -107,6 +115,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710160916103_Studions Directors validations.resx">
       <DependentUpon>201710160916103_Studions Directors validations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710170846442_initial actors.resx">
+      <DependentUpon>201710170846442_initial actors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710170850141_m2m actorsFilms.resx">
+      <DependentUpon>201710170850141_m2m actorsFilms.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

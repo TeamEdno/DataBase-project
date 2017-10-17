@@ -10,8 +10,11 @@ namespace FilmRanking.Models
 {
     public class Film
     {
+        private ICollection<Actor> actors;
+
         public Film()
         {
+            this.actors = new HashSet<Actor>();
         }
         
         public int Id { get; set; }
@@ -22,8 +25,17 @@ namespace FilmRanking.Models
 
         public string Title { get; set; }
 
-        [NotMapped]
-        public virtual ICollection<Actor> Actors { get; set; }
+        public virtual ICollection<Actor> Actors
+        {
+            get
+            {
+                return this.actors;
+            }
+            set
+            {
+                this.actors = value;
+            }
+        }
 
         public int? DirectorId { get; set; }
 
