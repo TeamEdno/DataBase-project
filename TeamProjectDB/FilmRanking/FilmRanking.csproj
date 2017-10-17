@@ -73,6 +73,7 @@
     <Compile Include="Commands\Modifying\DeleteFilmCommand.cs" />
     <Compile Include="Commands\Modifying\RateFilmCommand.cs" />
     <Compile Include="Data\FilmRankingContext.cs" />
+    <Compile Include="GUI\GraphicInterfaces.cs" />
     <Compile Include="Migrations\201710141644402_Initial Migration to create DB.cs" />
     <Compile Include="Migrations\201710141644402_Initial Migration to create DB.Designer.cs">
       <DependentUpon>201710141644402_Initial Migration to create DB.cs</DependentUpon>

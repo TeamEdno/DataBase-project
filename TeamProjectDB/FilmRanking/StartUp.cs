@@ -7,6 +7,9 @@ using System.Data.Entity;
 using FilmRanking.Data;
 using FilmRanking.Migrations;
 using FilmRanking.Models;
+using FilmRanking.BusinessLogic.Contracts;
+using FilmRanking.BusinessLogic.Providers.Readers;
+using FilmRanking.GUI;
 
 namespace FilmRanking
 {
@@ -14,32 +17,36 @@ namespace FilmRanking
     {
         static void Main()
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<FilmRankingContext, Configuration>());
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<FilmRankingContext, Configuration>());
 
-            using (var context = new FilmRankingContext())
-            {
-                context.Actors.ToList();
+            //using (var context = new FilmRankingContext())
+            //{
+            //    context.Films.ToList();
 
-                //var studio = new Models.Studio();
-                //studio.Name = "PeshoEnt";
-                //studio.YearEstablished = 1987;
-                //context.Studios.Add(studio);
+            //    //var studio = new Models.Studio();
+            //    //studio.Name = "PeshoEnt";
+            //    //studio.YearEstablished = 1987;
+            //    //context.Studios.Add(studio);
 
-                //var director = new Models.Director();
-                //director.FirstName = "Pencho";
-                //director.LastName = "Kobadynski";
-                //director.YearBorn = 1980;
-                //context.Directors.Add(director);
+            //    //var director = new Models.Director();
+            //    //director.FirstName = "Pencho";
+            //    //director.LastName = "Kobadynski";
+            //    //director.YearBorn = 1980;
+            //    //context.Directors.Add(director);
 
-                //var film = new Film();
-                //film.Genre = Models.Enums.Genre.Action;
-                //film.Title = "Adventures of Little Mock";
-                //film.Director = director;
-                //film.Studio = studio;
-                //context.Films.Add(film);
+            //    //var film = new Film();
+            //    //film.Genre = Models.Enums.Genre.Action;
+            //    //film.Title = "Adventures of Little Mock";
+            //    //film.Director = director;
+            //    //film.Studio = studio;
+            //    //context.Films.Add(film);
 
-                //context.SaveChanges();
-            }
+            //    //context.SaveChanges();
+            //}
+            GraphicInterfaces interfaces = new GraphicInterfaces();
+            ConsoleReader reader = new ConsoleReader();
+            Engine myOneEngine = new Engine(reader, interfaces);
+            myOneEngine.Run();
         }
     }
 }
