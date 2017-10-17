@@ -36,5 +36,22 @@ Please enter the address of your file.";
             return @"You chose to read a file. To go back to the main menu press <1>.
 Not qute sure how were gonna create pdfs yet.";
         }
+
+        public string CreateGeneralInstructions()
+        {
+            return "Please enter the required data as requested below.";
+        }
+
+        public string Title()
+        {
+            return "Title: ";
+        }
+
+        public string Genre()
+        {
+            return "Title: ";
+        }
+
+       
     }
 }

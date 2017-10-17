@@ -9,9 +9,9 @@ namespace FilmRanking.BusinessLogic.Providers.Writers
 {
     class ConsoleWriter : IWriter
     {
-        public void Write()
+        public void Write(string text)
         {
-            throw new NotImplementedException();
+            Console.WriteLine(text);
         }
     }
 }

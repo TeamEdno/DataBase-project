@@ -8,6 +8,6 @@ namespace FilmRanking.BusinessLogic.Providers.Contracts
 {
     public interface IWriter
     {
-        void Write();
+        void Write(string text);
     }
 }

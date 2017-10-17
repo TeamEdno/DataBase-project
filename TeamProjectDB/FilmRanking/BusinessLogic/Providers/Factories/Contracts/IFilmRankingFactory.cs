@@ -11,7 +11,7 @@ namespace FilmRanking.BusinessLogic.Providers.Factories.Contracts
     public interface IFilmRankingFactory
     {
         Film CreateFilm(string Title, Genre genre);
-        Actor AddActorToFilm();
+        Actor AddActorToFilm(string FirstName, string LastName, int YearBorn, string ShortBio, );
 
     }
 }
