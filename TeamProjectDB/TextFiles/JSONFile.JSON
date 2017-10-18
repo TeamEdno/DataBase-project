@@ -1,0 +1,30 @@
+{
+	'Actors' : [
+		{ 'FirstName': 'ActorFN1', 'LastName': 'ActorLN1', 'YearBorn': 1981 , 'ShortBio': 'fake 1' },
+		{ 'FirstName': 'ActorFN2', 'LastName': 'ActorLN2', 'YearBorn': 1982 , 'ShortBio': 'fake 2' },
+		{ 'FirstName': 'ActorFN3', 'LastName': 'ActorLN3', 'YearBorn': 1983 , 'ShortBio': 'fake 3' },
+		{ 'FirstName': 'ActorFN4', 'LastName': 'ActorLN4', 'YearBorn': 1984 , 'ShortBio': 'fake 4' },
+		{ 'FirstName': 'ActorFN5', 'LastName': 'ActorLN5', 'YearBorn': 1985 , 'ShortBio': 'fake 5' }
+  		],
+	'Films' : [
+		{ 'Genre': 'Zanr1', 'Title': 'Title1', 'DirectorId': 1 , 'StudioId': 1 },
+		{ 'Genre': 'Zanr2', 'Title': 'Title2', 'DirectorId': 2 , 'StudioId': 2 },
+		{ 'Genre': 'Zanr3', 'Title': 'Title3', 'DirectorId': 3 , 'StudioId': 3 },
+		{ 'Genre': 'Zanr4', 'Title': 'Title4', 'DirectorId': 4 , 'StudioId': 4 },
+		{ 'Genre': 'Zanr5', 'Title': 'Title5', 'DirectorId': 5 , 'StudioId': 5 }
+  		],
+	'Directors' : [
+		{ 'FirstName': 'DirektorFN1', 'LastName': 'DirektorLN1', 'YearBorn': 1981 , 'ShortBio': 'fake 1' },
+		{ 'FirstName': 'DirektorFN2', 'LastName': 'DirektorLN2', 'YearBorn': 1982 , 'ShortBio': 'fake 2' },
+		{ 'FirstName': 'DirektorFN3', 'LastName': 'DirektorLN3', 'YearBorn': 1983 , 'ShortBio': 'fake 3' },
+		{ 'FirstName': 'DirektorFN4', 'LastName': 'DirektorLN4', 'YearBorn': 1984 , 'ShortBio': 'fake 4' },
+		{ 'FirstName': 'DirektorFN5', 'LastName': 'DirektorLN5', 'YearBorn': 1985 , 'ShortBio': 'fake 5' }
+  		],
+	'Studios' : [
+		{ 'Name': 'StudioFN1', 'YearEstablished': 1981 , 'Trivia':'fake Trivia 1' },
+		{ 'Name': 'StudioFN2', 'YearEstablished': 1982 , 'Trivia':'fake Trivia 2' },
+		{ 'Name': 'StudioFN3', 'YearEstablished': 1983 , 'Trivia':'fake Trivia 3' },
+		{ 'Name': 'StudioFN4', 'YearEstablished': 1984 , 'Trivia':'fake Trivia 4' },
+		{ 'Name': 'StudioFN5', 'YearEstablished': 1985 , 'Trivia':'fake Trivia 5' }
+  		]
+}

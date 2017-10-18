@@ -38,6 +38,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject, Version=3.3.1.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.1\lib\net45\Ninject.dll</HintPath>
     </Reference>
@@ -99,6 +102,10 @@
     <Compile Include="Migrations\201710170850141_m2m actorsFilms.Designer.cs">
       <DependentUpon>201710170850141_m2m actorsFilms.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710182323558_film rating to collection.cs" />
+    <Compile Include="Migrations\201710182323558_film rating to collection.Designer.cs">
+      <DependentUpon>201710182323558_film rating to collection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Actor.cs" />
     <Compile Include="Models\Director.cs" />
@@ -128,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710170850141_m2m actorsFilms.resx">
       <DependentUpon>201710170850141_m2m actorsFilms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710182323558_film rating to collection.resx">
+      <DependentUpon>201710182323558_film rating to collection.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

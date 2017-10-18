@@ -12,6 +12,7 @@ using FilmRanking.BusinessLogic.Providers.Readers;
 using FilmRanking.GUI;
 using Ninject;
 using FilmRanking.Ninject;
+using FilmRanking.BusinessLogic.Providers.Parsers;
 
 namespace FilmRanking
 {
@@ -19,7 +20,10 @@ namespace FilmRanking
     {
         static void Main()
         {
-            var kernel = new StandardKernel(new FilmRankingModule());
+            JSONParser jsonParse = new JSONParser("../../../TextFiles/JSONFile.JSON");
+            jsonParse.Parse();
+
+            //var kernel = new StandardKernel(new FilmRankingModule());
 
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<FilmRankingContext, Configuration>());
 
@@ -47,10 +51,12 @@ namespace FilmRanking
 
             //    //context.SaveChanges();
             //}
-            GraphicInterfaces interfaces = new GraphicInterfaces();
-            ConsoleReader reader = new ConsoleReader();
-            Engine myOneEngine = new Engine(reader, interfaces);
-            myOneEngine.Run();
+
+
+            //GraphicInterfaces interfaces = new GraphicInterfaces();
+            //ConsoleReader reader = new ConsoleReader();
+            //Engine myOneEngine = new Engine(reader, interfaces);
+            //myOneEngine.Run();
         }
     }
 }
