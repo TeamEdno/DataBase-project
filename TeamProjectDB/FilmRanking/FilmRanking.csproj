@@ -38,6 +38,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject, Version=3.3.1.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.1\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -68,11 +71,13 @@
     <Compile Include="Commands\Listing\ListFilmCommand.cs" />
     <Compile Include="Commands\Modifying\AddActorToFilmCommand.cs" />
     <Compile Include="Commands\Modifying\AddDirectorToFilmCommand.cs" />
+    <Compile Include="Commands\Modifying\AddFilmToDataBaseCommand.cs" />
     <Compile Include="Commands\Modifying\AddStudioToFilmCommand.cs" />
     <Compile Include="Commands\Modifying\CreateFilmCommand.cs" />
     <Compile Include="Commands\Modifying\DeleteFilmCommand.cs" />
     <Compile Include="Commands\Modifying\RateFilmCommand.cs" />
     <Compile Include="Data\FilmRankingContext.cs" />
+    <Compile Include="Data\IFilmMakingContext.cs" />
     <Compile Include="GUI\GraphicInterfaces.cs" />
     <Compile Include="Migrations\201710141644402_Initial Migration to create DB.cs" />
     <Compile Include="Migrations\201710141644402_Initial Migration to create DB.Designer.cs">
@@ -100,6 +105,7 @@
     <Compile Include="Models\Enums\Genre.cs" />
     <Compile Include="Models\Film.cs" />
     <Compile Include="Models\Studio.cs" />
+    <Compile Include="Ninject\FilmRankingModule.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

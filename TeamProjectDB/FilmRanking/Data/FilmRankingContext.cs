@@ -1,17 +1,12 @@
 ﻿using FilmRanking.Models;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FilmRanking.Data
 {
-    public class FilmRankingContext:DbContext
+    public class FilmRankingContext : DbContext, IFilmMakingContext
     {
         public FilmRankingContext()
-            :base("FilmRankingConnection")
+            : base("FilmRankingConnection")
         {
         }
 

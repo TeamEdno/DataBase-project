@@ -10,6 +10,8 @@ using FilmRanking.Models;
 using FilmRanking.BusinessLogic.Contracts;
 using FilmRanking.BusinessLogic.Providers.Readers;
 using FilmRanking.GUI;
+using Ninject;
+using FilmRanking.Ninject;
 
 namespace FilmRanking
 {
@@ -17,6 +19,8 @@ namespace FilmRanking
     {
         static void Main()
         {
+            var kernel = new StandardKernel(new FilmRankingModule());
+
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<FilmRankingContext, Configuration>());
 
             //using (var context = new FilmRankingContext())
