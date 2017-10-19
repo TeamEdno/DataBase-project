@@ -31,27 +31,28 @@ namespace FilmRanking
             //writer.Write(text.ToString());
 
 
-            //JSONParser jsonParse = new JSONParser("../../../TextFiles/JSONFile.JSON");
-            //jsonParse.Parse();
 
-            //var kernel = new StandardKernel(new FilmRankingModule());
 
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<FilmRankingContext, Configuration>());
+            var kernel = new StandardKernel(new FilmRankingModule());
+
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<FilmRankingContext, Configuration>());
 
             using (var context = new FilmRankingContext())
             {
-                context.Films.ToList();
-
-                //var studio = new Models.Studio();
+                JSONParser jsonParse = new JSONParser("../../../TextFiles/JSONFile.JSON", context);
+                jsonParse.Parse();
+                //var studio = new Studio();
                 //studio.Name = "PeshoEnt";
-                //studio.YearEstablished = 1987;
+                //studio.Trivia = "sometihng";
+                //studio.YearEstablished = 1999;
                 //context.Studios.Add(studio);
 
-                //var director = new Models.Director();
+                //var director = new Director();
                 //director.FirstName = "Pencho";
                 //director.LastName = "Kobadynski";
                 //director.YearBorn = 1980;
                 //context.Directors.Add(director);
+
 
                 //var film = new Film();
                 //film.Genre = Models.Enums.Genre.Action;
@@ -59,8 +60,6 @@ namespace FilmRanking
                 //film.Director = director;
                 //film.Studio = studio;
                 //context.Films.Add(film);
-
-                //context.SaveChanges();
             }
 
 
