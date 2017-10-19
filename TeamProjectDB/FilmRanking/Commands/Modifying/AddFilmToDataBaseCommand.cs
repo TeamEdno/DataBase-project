@@ -34,9 +34,13 @@ namespace FilmRanking.Commands.Modifying
             string genreInput = reader.Read();
             Genre genre = (Genre)Enum.Parse(typeof(Genre), genreInput);
 
+            writer.Write(interfaceGenerator.Rate());
+            double rate = double.Parse(reader.Read());
+
             var film = new Film();
             film.Title = title;
             film.Genre = genre;
+            film.Rate = rate;
 
             this.context.Films.Add(film);
             this.context.SaveChanges();

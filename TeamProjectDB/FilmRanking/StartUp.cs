@@ -11,9 +11,9 @@ namespace FilmRanking
     {
         static void Main()
         {
-            //var kernel = new StandardKernel(new FilmRankingModule());
-            //IEngine engine = kernel.Get<IEngine>();
-            //engine.Run();
+            var kernel = new StandardKernel(new FilmRankingModule());
+            IEngine engine = kernel.Get<IEngine>();
+            engine.Run();
 
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<FilmRankingContext, Configuration>());
 
@@ -32,14 +32,14 @@ namespace FilmRanking
 
 
 
-            using (var context = new FilmRankingContext())
-            {
-                XMLParser xmlParse = new XMLParser("../../../TextFiles/XMLFile.xml", context);
-                xmlParse.Parse();
-                //JSONParser jsonParse = new JSONParser("../../../TextFiles/JSONFile.JSON", context);
-                //jsonParse.Parse();
+            //using (var context = new FilmRankingContext())
+            //{
+            //    XMLParser xmlParse = new XMLParser("../../../TextFiles/XMLFile.xml", context);
+            //    xmlParse.Parse();
+            //    //JSONParser jsonParse = new JSONParser("../../../TextFiles/JSONFile.JSON", context);
+            //    //jsonParse.Parse();
 
-            }
+            //}
 
             //using (var context = new FilmRankingContext())
             //{
