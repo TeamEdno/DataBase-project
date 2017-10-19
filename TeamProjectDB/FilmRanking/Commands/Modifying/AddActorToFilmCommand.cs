@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FilmRanking.Commands.Modifying
 {
-    class AddActorToFilmCommand : ICommand
+    public class AddActorToFilmCommand
     {
         private readonly FilmRankingContext context;
 

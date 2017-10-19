@@ -52,6 +52,26 @@ Not qute sure how were gonna create pdfs yet.";
             return "Genre: ";
         }
 
-       
+        public string FName()
+        {
+            return "First name: ";
+        }
+
+        public string LName()
+        {
+            return "Last name: ";
+        }
+
+        public string YBorn()
+        {
+            return "Year born: ";
+        }
+
+        public string SBio()
+        {
+            return "Short bio: ";
+        }
+
+
     }
 }

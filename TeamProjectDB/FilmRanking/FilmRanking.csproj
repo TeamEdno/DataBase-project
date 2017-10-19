@@ -97,6 +97,7 @@
     <Compile Include="Commands\Modifying\AddDirectorToFilmCommand.cs" />
     <Compile Include="Commands\Modifying\AddFilmToDataBaseCommand.cs" />
     <Compile Include="Commands\Modifying\AddStudioToFilmCommand.cs" />
+    <Compile Include="Commands\Modifying\CreateActorCommand.cs" />
     <Compile Include="Commands\Modifying\CreateFilmCommand.cs" />
     <Compile Include="Commands\Modifying\DeleteFilmCommand.cs" />
     <Compile Include="Data\FilmRankingContext.cs" />
