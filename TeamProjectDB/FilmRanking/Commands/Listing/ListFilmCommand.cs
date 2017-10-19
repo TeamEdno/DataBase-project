@@ -28,14 +28,14 @@ namespace FilmRanking.Commands.Listing
 
         public void Execute()
         {
-            writer.Write(interfaceGenerator.ListGeneralInstructions());
-            var topX = int.Parse(reader.Read());
+            this.writer.Write(this.interfaceGenerator.ListGeneralInstructions());
+            var topX = int.Parse(this.reader.Read());
 
-            var selectedCollection = context.Films.OrderByDescending(f => f.Rate).Take(topX).ToList();
+            var selectedCollection = this.context.Films.OrderByDescending(f => f.Rate).Take(topX).ToList();
 
             foreach (var item in selectedCollection)
             {
-                writer.Write($"{item.Title} with rating: {item.Rate}");
+                this.writer.Write($"{item.Title} with rating: {item.Rate}");
             }
         }
     }
