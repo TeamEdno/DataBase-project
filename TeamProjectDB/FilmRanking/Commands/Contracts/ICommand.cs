@@ -9,6 +9,6 @@ namespace FilmRanking.Commands.Contracts
 {
     public interface ICommand
     {
-        void Execute(IList<string> parameters);
+        void Execute();
     }
 }

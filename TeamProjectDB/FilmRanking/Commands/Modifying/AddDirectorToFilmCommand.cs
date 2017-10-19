@@ -9,7 +9,7 @@ namespace FilmRanking.Commands.Modifying
 {
     public class AddDirectorToFilmCommand : ICommand
     {
-        public void Execute(IList<string> parameters)
+        public void Execute()
         {
             throw new NotImplementedException();
         }
