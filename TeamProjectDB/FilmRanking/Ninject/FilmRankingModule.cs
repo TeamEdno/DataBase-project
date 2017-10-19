@@ -7,6 +7,7 @@ using FilmRanking.Commands.Modifying;
 using FilmRanking.Commands.Listing;
 using FilmRanking.Data;
 using Ninject.Modules;
+using FilmRanking.BusinessLogic.Providers.Factories;
 
 namespace FilmRanking.Ninject
 {
@@ -16,6 +17,7 @@ namespace FilmRanking.Ninject
         {
             this.Bind<IFilmMakingContext>().To<FilmRankingContext>();
             this.Bind<IEngine>().To<Engine>().InSingletonScope();
+            this.Bind<ICommandFactory>().To<CommandFactory>().InSingletonScope();
 
             this.Bind<IReader>().To<ConsoleReader>().InSingletonScope();
             this.Bind<IWriter>().To<ConsoleWriter>().InSingletonScope();

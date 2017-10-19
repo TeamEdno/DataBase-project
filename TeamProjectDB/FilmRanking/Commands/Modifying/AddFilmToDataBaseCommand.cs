@@ -28,10 +28,10 @@ namespace FilmRanking.Commands.Modifying
             writer.Write(interfaceGenerator.CreateGeneralInstructions());
 
             writer.Write(interfaceGenerator.Title());
-            string title = Console.ReadLine();
+            string title = reader.Read();
 
             writer.Write(interfaceGenerator.Genre());
-            string genreInput = Console.ReadLine();
+            string genreInput = reader.Read();
             Genre genre = (Genre)Enum.Parse(typeof(Genre), genreInput);
 
             var film = new Film();

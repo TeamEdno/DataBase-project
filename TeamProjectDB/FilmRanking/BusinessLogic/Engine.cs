@@ -13,12 +13,14 @@ namespace FilmRanking.BusinessLogic.Contracts
     {
         private readonly IReader reader;
         private GraphicInterfaces interfaceGenerator;
+        private ICommandFactory factory;
 
 
-        public Engine(IReader reader, GraphicInterfaces interfaceGenerator)
+        public Engine(IReader reader, GraphicInterfaces interfaceGenerator, ICommandFactory factory)
         {
             this.reader = reader;
             this.interfaceGenerator = interfaceGenerator;
+            this.factory = factory;
         }
 
         public void Run()
@@ -45,20 +47,6 @@ namespace FilmRanking.BusinessLogic.Contracts
         private void CreateCommand()
         {
             Console.WriteLine(interfaceGenerator.CreateDatabaseManuallyInterface());
-            string input = Console.ReadLine();
-            if (input == "1")
-            {
-                this.Run();
-            }
-            else
-            {
-                Console.WriteLine("\n creates a model based on the user input would be good to use a trycatch here \n");
-                this.CreateCommand();
-            }
-        }
-
-        private void CreateFilmAndAddToDB()
-        {
             string input = reader.Read();
             if (input == "1")
             {
@@ -68,6 +56,12 @@ namespace FilmRanking.BusinessLogic.Contracts
             {
                 
             }
+        }
+
+        private void CreateFilmAndAddToDB()
+        {
+            var command = factory.CreateCommand("AddFilmToDataBase");
+            command.Execute();
         }
 
         private void ReadFile()

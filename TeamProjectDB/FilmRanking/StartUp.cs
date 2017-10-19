@@ -12,6 +12,7 @@ namespace FilmRanking
         {
             var kernel = new StandardKernel(new FilmRankingModule());
             IEngine engine = kernel.Get<IEngine>();
+            engine.Run();
 
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<FilmRankingContext, Configuration>());
 
@@ -37,12 +38,12 @@ namespace FilmRanking
 
             //}
 
-            using (var context = new FilmRankingContext())
-            {
-                var movie = context.Films.Single(x => x.Title == "Title1");
-                context.Films.Remove(movie);
-                context.SaveChanges();
-            }
+            //using (var context = new FilmRankingContext())
+            //{
+            //    var movie = context.Films.Single(x => x.Title == "Title1");
+            //    context.Films.Remove(movie);
+            //    context.SaveChanges();
+            //}
 
 
             //GraphicInterfaces interfaces = new GraphicInterfaces();
