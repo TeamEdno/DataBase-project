@@ -20,8 +20,12 @@ namespace FilmRanking
     {
         static void Main()
         {
-            JSONParser jsonParse = new JSONParser("../../../TextFiles/JSONFile.JSON");
-            jsonParse.Parse();
+            PDFWriter writer= new PDFWriter("../../../TextFiles/PDFReport.pdf");
+            writer.Write("text text text text text");
+
+
+            //JSONParser jsonParse = new JSONParser("../../../TextFiles/JSONFile.JSON");
+            //jsonParse.Parse();
 
             //var kernel = new StandardKernel(new FilmRankingModule());
 
