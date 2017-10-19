@@ -26,14 +26,26 @@ namespace FilmRanking.BusinessLogic.Contracts
         public void Run()
         {
             Console.WriteLine(interfaceGenerator.MainMenuInterface());
-            string userChoice = Console.ReadLine();
+            string userChoice = this.reader.Read();
             switch (userChoice)
             {
                 case "1":
                     this.CreateFilmAndAddToDB();
                     break;
                 case "2":
-                    this.ReadFile();
+                    this.AddActorToFilm();
+                    break;
+                case "3":
+                    this.AddDirectorToFilm();
+                    break;
+                case "4":
+                    this.AddStudioToFilm();
+                    break;
+                case "5":
+                    this.RateMovie();
+                    break;
+                case "6":
+                    this.DeleteMovie();
                     break;
                 case "0":
                     Console.WriteLine("Exitted");
@@ -46,37 +58,50 @@ namespace FilmRanking.BusinessLogic.Contracts
 
         private void CreateCommand()
         {
-            Console.WriteLine(interfaceGenerator.CreateDatabaseManuallyInterface());
-            string input = reader.Read();
-            if (input == "1")
-            {
-                this.Run();
-            }
-            else
-            {
-                
-            }
+
         }
 
         private void CreateFilmAndAddToDB()
         {
-            var command = factory.CreateCommand("AddFilmToDataBase");
+
+            var command = this.factory.CreateCommand("AddFilmToDataBase");
             command.Execute();
+            this.Run();
         }
 
-        private void ReadFile()
+        private void AddActorToFilm()
         {
-            Console.WriteLine(interfaceGenerator.CreateDatabaseManuallyInterface());
-            string input = Console.ReadLine();
-            if (input == "1")
-            {
-                this.Run();
-            }
-            else
-            {
-                Console.WriteLine("\n reads a file and fills ur database \n");
-                this.ReadFile();
-            }
+            var command = this.factory.CreateCommand("AddActorToFilm");
+            command.Execute();
+            this.Run();
+        }
+
+        private void AddDirectorToFilm()
+        {
+            var command = this.factory.CreateCommand("AddDirectorToFilm");
+            command.Execute();
+            this.Run();
+        }
+
+        private void AddStudioToFilm()
+        {
+            var command = this.factory.CreateCommand("AddStudioToFilm");
+            command.Execute();
+            this.Run();
+        }
+
+        private void DeleteMovie()
+        {
+            var command = this.factory.CreateCommand("DeleteFilm");
+            command.Execute();
+            this.Run();
+        }
+        private void RateMovie()
+        {
+            var command = this.factory.CreateCommand("RateFilm");
+            command.Execute();
+            this.Run();
         }
     }
 }
+

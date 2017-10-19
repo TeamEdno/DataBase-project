@@ -62,7 +62,7 @@ namespace FilmRanking.Commands.Modifying
             currentFilm.Director = director;
             context.SaveChanges();
 
-            writer.Write($"Actor {director.FirstName} {director.LastName} is added to movie {filmTitle}.");
+            writer.Write($"Director {director.FirstName} {director.LastName} is added to movie {filmTitle}.");
 
         }
     }

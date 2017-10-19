@@ -15,7 +15,8 @@ namespace FilmRanking.GUI
 
         public string MainMenuInterface()
         {
-            return @"Hello!!!
+            return @"________________________
+Hello!!!
 Choose an action:
 1-Add a movie to the database.
 2-Add an actor to a movie.
@@ -24,21 +25,6 @@ Choose an action:
 5-Rate a movie.
 6-Delete a movie.
 0-Exit.";
-        }
-        public string CreateDatabaseManuallyInterface()
-        {
-            return @"You chose to add movies to the database manually. To go back to the main menu press <1>.
-Please enter the movie this way < something | something | something,something | something > .";
-        }
-        public string ReadFileInterface()
-        {
-            return @"You chose to read a file. To go back to the main menu press <1>.
-Please enter the address of your file.";
-        }
-        public string MakePDFInterface()
-        {
-            return @"You chose to read a file. To go back to the main menu press <1>.
-Not qute sure how were gonna create pdfs yet.";
         }
 
         public string CreateGeneralInstructions()
