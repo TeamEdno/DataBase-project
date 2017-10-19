@@ -81,5 +81,9 @@ Not qute sure how were gonna create pdfs yet.";
             return "Please type the title of the film: ";
         }
 
+        public string Rate()
+        {
+            return "Rate: ";
+        }
     }
 }
