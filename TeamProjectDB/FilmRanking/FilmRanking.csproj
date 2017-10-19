@@ -85,6 +85,7 @@
     <Compile Include="BusinessLogic\Providers\Factories\CommandFactory.cs" />
     <Compile Include="BusinessLogic\Providers\Parsers\Contracts\ICommandParser.cs" />
     <Compile Include="BusinessLogic\Providers\Parsers\Contracts\IFormatParser.cs" />
+    <Compile Include="BusinessLogic\Providers\Parsers\FileParse.cs" />
     <Compile Include="BusinessLogic\Providers\Parsers\JSONParser.cs" />
     <Compile Include="BusinessLogic\Providers\Writers\PDFWriter.cs" />
     <Compile Include="BusinessLogic\Providers\Parsers\XMLParser.cs" />

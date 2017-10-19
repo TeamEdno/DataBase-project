@@ -13,18 +13,13 @@ using System.Threading.Tasks;
 
 namespace FilmRanking.BusinessLogic.Providers.Parsers
 {
-    public class JSONParser : IFormatParser
+    public class JSONParser : FileParse, IFormatParser
     {
-        public JSONParser(string address, FilmRankingContext context)
+        public JSONParser(string address, FilmRankingContext context) : base(address, context)
         {
-            this.Address = address;
-            this.Context = context;
         }
 
-        public string Address { get; set; }
-        public FilmRankingContext Context { get; set; }
-
-        public void Parse()
+        public override void Parse()
         {
             using (StreamReader reader = new StreamReader(this.Address))
             {
@@ -38,7 +33,7 @@ namespace FilmRanking.BusinessLogic.Providers.Parsers
                     Studio studioModel = new Studio();
 
                     var info = jasonObject.SelectToken("Info");
-                    foreach(var entry in info)
+                    foreach (var entry in info)
                     {
                         //selects all the fields
                         var film = entry.SelectToken("Film");
@@ -47,42 +42,28 @@ namespace FilmRanking.BusinessLogic.Providers.Parsers
                         var studio = entry.SelectToken("Studio");
 
                         //film
-                        Genre genre = (Genre)Enum.Parse(typeof(Genre), film.SelectToken("Genre").ToString());
-                        string title = film.SelectToken("Title").ToString();
-                        double rate = double.Parse(film.SelectToken("Rate").ToString());
-                        filmModel.Genre = genre;
-                        filmModel.Title = title;
-                        filmModel.Rate = rate;
+                        filmModel.Genre = (Genre)Enum.Parse(typeof(Genre), film.SelectToken("Genre").ToString());
+                        filmModel.Title = film.SelectToken("Title").ToString();
+                        filmModel.Rate = double.Parse(film.SelectToken("Rate").ToString());
 
                         //actor
-                        string actorFirstName = actor.SelectToken("FirstName").ToString();
-                        string actorLastName = actor.SelectToken("LastName").ToString();
-                        int actorYearBorn = int.Parse(actor.SelectToken("YearBorn").ToString());
-                        string actorShortBio = actor.SelectToken("ShortBio").ToString();
-                        actorModel.FirstName = actorFirstName;
-                        actorModel.LastName = actorLastName;
-                        actorModel.YearBorn = actorYearBorn;
-                        actorModel.ShortBio = actorShortBio;
+                        actorModel.FirstName = actor.SelectToken("FirstName").ToString();
+                        actorModel.LastName = actor.SelectToken("LastName").ToString();
+                        actorModel.YearBorn = int.Parse(actor.SelectToken("YearBorn").ToString());
+                        actorModel.ShortBio = actor.SelectToken("ShortBio").ToString();
 
                         //studio
-                        string studioName = studio.SelectToken("Name").ToString();
-                        int studiYearEstablished = int.Parse(studio.SelectToken("YearEstablished").ToString());
-                        string studioTrivia = studio.SelectToken("Trivia").ToString();
-                        studioModel.Name = studioName;
-                        studioModel.YearEstablished = studiYearEstablished;
-                        studioModel.Trivia = studioTrivia;
+                        studioModel.Name = studio.SelectToken("Name").ToString();
+                        studioModel.YearEstablished = int.Parse(studio.SelectToken("YearEstablished").ToString());
+                        studioModel.Trivia = studio.SelectToken("Trivia").ToString();
 
                         //director
-                        string directorFirstName = director.SelectToken("FirstName").ToString();
-                        string directorLastName = director.SelectToken("LastName").ToString();
-                        int directorYearBorn = int.Parse(director.SelectToken("YearBorn").ToString());
-                        string directorShortBio = director.SelectToken("ShortBio").ToString();
-                        directorModel.FirstName = directorFirstName;
-                        directorModel.LastName = directorLastName;
-                        directorModel.YearBorn = directorYearBorn;
-                        directorModel.ShortBio = directorShortBio;
+                        directorModel.FirstName = director.SelectToken("FirstName").ToString();
+                        directorModel.LastName = director.SelectToken("LastName").ToString();
+                        directorModel.YearBorn = int.Parse(director.SelectToken("YearBorn").ToString());
+                        directorModel.ShortBio = director.SelectToken("ShortBio").ToString();
 
-
+                        //add all to the database
                         filmModel.Director = directorModel;
                         this.Context.Directors.Add(directorModel);
                         filmModel.Studio = studioModel;
