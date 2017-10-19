@@ -106,6 +106,7 @@
     <Compile Include="BusinessLogic\Providers\Writers\ConsoleWriter.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
     <Compile Include="Commands\Listing\ListFilmCommand.cs" />
+    <Compile Include="Commands\Listing\ListMoviesInPDF.cs" />
     <Compile Include="Commands\Modifying\AddActorToFilmCommand.cs" />
     <Compile Include="Commands\Modifying\AddDirectorToFilmCommand.cs" />
     <Compile Include="Commands\Modifying\AddFilmToDataBaseCommand.cs" />

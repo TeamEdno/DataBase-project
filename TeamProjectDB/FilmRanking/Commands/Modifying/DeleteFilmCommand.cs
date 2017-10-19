@@ -18,25 +18,27 @@ namespace FilmRanking.Commands.Modifying
         private IReader reader;
         private IWriter writer;
 
-        public DeleteFilmCommand(IFilmRankingContext context,
-            GraphicInterfaces interfaceGenerator, IReader reader, IWriter writer)
+        public DeleteFilmCommand(FilmRankingContext context,
+            GraphicInterfaces interfaceGenerator,
+            IReader reader,
+            ICommandFactory factory)
         {
             this.context = context;
             this.interfaceGenerator = interfaceGenerator;
             this.reader = reader;
-            this.writer = writer;
+            this.writer = factory.CreateWriter("ConsoleWriter");
         }
 
         public void Execute()
         {
-            writer.Write(interfaceGenerator.DeletingGeneralInstructions());
-            string filmTitle = reader.Read();
+            this.writer.Write(this.interfaceGenerator.DeletingGeneralInstructions());
+            string filmTitle = this.reader.Read();
 
             var movietoRemove = this.context.Films.Single(x => x.Title == filmTitle);
             this.context.Films.Remove(movietoRemove);
             this.context.SaveChanges();
 
-            writer.Write($"Movie with title {filmTitle} was removed.");
+            this.writer.Write($"Movie with title {filmTitle} was removed.");
         }
 
         

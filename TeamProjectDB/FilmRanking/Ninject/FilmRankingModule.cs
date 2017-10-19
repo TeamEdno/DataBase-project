@@ -8,6 +8,7 @@ using FilmRanking.Commands.Listing;
 using FilmRanking.Data;
 using Ninject.Modules;
 using FilmRanking.BusinessLogic.Providers.Factories;
+using FilmRanking.BusinessLogic.Providers.Parsers;
 
 namespace FilmRanking.Ninject
 {
@@ -20,7 +21,10 @@ namespace FilmRanking.Ninject
             this.Bind<ICommandFactory>().To<CommandFactory>().InSingletonScope();
 
             this.Bind<IReader>().To<ConsoleReader>().InSingletonScope();
-            this.Bind<IWriter>().To<ConsoleWriter>().InSingletonScope();
+
+
+            this.Bind<IWriter>().To<ConsoleWriter>().Named("ConsoleWriter");
+            this.Bind<IWriter>().To<PDFWriter>().Named("PDFWriter");
 
             this.Bind<ICommand>().To<AddFilmToDataBaseCommand>().Named("AddFilmToDataBase");
             this.Bind<ICommand>().To<AddActorToFilmCommand>().Named("AddActorToFilm");

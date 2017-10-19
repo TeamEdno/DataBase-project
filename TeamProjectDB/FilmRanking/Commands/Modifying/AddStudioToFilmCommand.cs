@@ -18,38 +18,40 @@ namespace FilmRanking.Commands.Modifying
         private IReader reader;
         private IWriter writer;
 
-        public AddStudioToFilmCommand(IFilmRankingContext context,
-            GraphicInterfaces interfaceGenerator, IReader reader, IWriter writer)
+        public AddStudioToFilmCommand(FilmRankingContext context,
+            GraphicInterfaces interfaceGenerator,
+            IReader reader,
+            ICommandFactory factory)
         {
             this.context = context;
             this.interfaceGenerator = interfaceGenerator;
             this.reader = reader;
-            this.writer = writer;
+            this.writer = factory.CreateWriter("ConsoleWriter");
         }
 
         public void Execute()
         {
-            writer.Write(interfaceGenerator.CreateGeneralInstructions());
+            this.writer.Write(interfaceGenerator.CreateGeneralInstructions());
 
             var studio = new Studio();
 
-            writer.Write(interfaceGenerator.Name());
-            studio.Name = reader.Read();
+            this.writer.Write(this.interfaceGenerator.Name());
+            studio.Name = this.reader.Read();
 
-            writer.Write(interfaceGenerator.YEstablished());
-            studio.YearEstablished = int.Parse(reader.Read());
+            this.writer.Write(this.interfaceGenerator.YEstablished());
+            studio.YearEstablished = int.Parse(this.reader.Read());
 
-            writer.Write(interfaceGenerator.Trivia());
-            studio.Trivia = reader.Read();
+            this.writer.Write(this.interfaceGenerator.Trivia());
+            studio.Trivia = this.reader.Read();
 
-            writer.Write(interfaceGenerator.ToWhichFilm());
-            var filmTitle = reader.Read();
+            this.writer.Write(this.interfaceGenerator.ToWhichFilm());
+            var filmTitle = this.reader.Read();
 
             Film currentFilm;
 
             try
             {
-                currentFilm = context.Films.Where(f => f.Title == filmTitle).First();
+                currentFilm = this.context.Films.Where(f => f.Title == filmTitle).First();
             }
             catch (Exception)
             {
@@ -57,9 +59,9 @@ namespace FilmRanking.Commands.Modifying
             }
 
             currentFilm.Studio = studio;
-            context.SaveChanges();
+            this.context.SaveChanges();
 
-            writer.Write($"Studio {studio.Name} is added to movie: {filmTitle}.");
+            this.writer.Write($"Studio {studio.Name} is added to movie: {filmTitle}.");
 
         }
     }

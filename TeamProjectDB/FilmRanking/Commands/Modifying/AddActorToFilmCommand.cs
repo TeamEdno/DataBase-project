@@ -16,38 +16,41 @@ namespace FilmRanking.Commands.Modifying
         private IWriter writer;
 
         public AddActorToFilmCommand(FilmRankingContext context, 
-            GraphicInterfaces interfaceGenerator, IReader reader, IWriter writer)
+            GraphicInterfaces interfaceGenerator,
+            IReader reader, 
+            ICommandFactory factory)
         {
             this.context = context;
             this.interfaceGenerator = interfaceGenerator;
             this.reader = reader;
-            this.writer = writer;
+            this.writer = factory.CreateWriter("ConsoleWriter");
         }
+
         public void Execute()
         {
-            writer.Write(interfaceGenerator.CreateGeneralInstructions());
+            this.writer.Write(this.interfaceGenerator.CreateGeneralInstructions());
 
             var actor = new Actor();
-            writer.Write(interfaceGenerator.FName());
-            actor.FirstName = reader.Read();
+            this.writer.Write(interfaceGenerator.FName());
+            actor.FirstName = this.reader.Read();
 
-            writer.Write(interfaceGenerator.LName());
-            actor.LastName = reader.Read();
+            this.writer.Write(interfaceGenerator.LName());
+            actor.LastName = this.reader.Read();
 
-            writer.Write(interfaceGenerator.YBorn());
+            this.writer.Write(interfaceGenerator.YBorn());
             actor.YearBorn = int.Parse(reader.Read());
 
-            writer.Write(interfaceGenerator.SBio());
-            actor.ShortBio = reader.Read();
+            this.writer.Write(interfaceGenerator.SBio());
+            actor.ShortBio = this.reader.Read();
 
-            writer.Write(interfaceGenerator.ToWhichFilm());
-            var filmTitle = reader.Read();
+            this.writer.Write(interfaceGenerator.ToWhichFilm());
+            var filmTitle = this.reader.Read();
 
             Film currentFilm;
 
             try
             {
-                currentFilm = context.Films.Where(f => f.Title == filmTitle).First();
+                currentFilm = this.context.Films.Where(f => f.Title == filmTitle).First();
             }
             catch (Exception)
             {
@@ -55,9 +58,9 @@ namespace FilmRanking.Commands.Modifying
             }
 
             currentFilm.Actors.Add(actor);
-            context.SaveChanges();
+            this.context.SaveChanges();
 
-            writer.Write($"Actor {actor.FirstName} {actor.LastName} is added to movie {filmTitle}.");
+            this.writer.Write($"Actor {actor.FirstName} {actor.LastName} is added to movie {filmTitle}.");
 
         }
     }

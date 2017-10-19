@@ -15,27 +15,30 @@ namespace FilmRanking.Commands.Modifying
         private IReader reader;
         private IWriter writer;
 
-        public AddFilmToDataBaseCommand(IFilmRankingContext context, GraphicInterfaces interfaceGenerator, IReader reader, IWriter writer)
+        public AddFilmToDataBaseCommand(FilmRankingContext context,
+            GraphicInterfaces interfaceGenerator,
+            IReader reader,
+            ICommandFactory factory)
         {
             this.context = context;
             this.interfaceGenerator = interfaceGenerator;
             this.reader = reader;
-            this.writer = writer;
+            this.writer = factory.CreateWriter("ConsoleWriter");
         }
 
         public void Execute()
         {
-            writer.Write(interfaceGenerator.CreateGeneralInstructions());
+            this.writer.Write(this.interfaceGenerator.CreateGeneralInstructions());
 
-            writer.Write(interfaceGenerator.Title());
-            string title = reader.Read();
+            this.writer.Write(this.interfaceGenerator.Title());
+            string title = this.reader.Read();
 
-            writer.Write(interfaceGenerator.Genre());
-            string genreInput = reader.Read();
+            this.writer.Write(this.interfaceGenerator.Genre());
+            string genreInput = this.reader.Read();
             Genre genre = (Genre)Enum.Parse(typeof(Genre), genreInput);
 
-            writer.Write(interfaceGenerator.Rate());
-            double rate = double.Parse(reader.Read());
+            this.writer.Write(this.interfaceGenerator.Rate());
+            double rate = double.Parse(this.reader.Read());
 
             var film = new Film();
             film.Title = title;
@@ -47,7 +50,7 @@ namespace FilmRanking.Commands.Modifying
 
             var filmID = film.Id;
 
-            writer.Write($"Film with ID {filmID} was added to Database");
+            this.writer.Write($"Film with ID {filmID} was added to Database");
 
         }
     }

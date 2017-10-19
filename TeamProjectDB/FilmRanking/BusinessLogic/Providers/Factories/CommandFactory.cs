@@ -17,5 +17,10 @@ namespace FilmRanking.BusinessLogic.Providers.Factories
         {
             return this.kernel.Get<ICommand>(commandName);
         }
+
+        public IWriter CreateWriter(string commandName)
+        {
+            return this.kernel.Get<IWriter>(commandName);
+        }
     }
 }

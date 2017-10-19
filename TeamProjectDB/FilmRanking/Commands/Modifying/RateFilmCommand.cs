@@ -17,29 +17,31 @@ namespace FilmRanking.Commands.Modifying
         private IReader reader;
         private IWriter writer;
 
-        public RateFilmCommand(IFilmRankingContext context,
-            GraphicInterfaces interfaceGenerator, IReader reader, IWriter writer)
+        public RateFilmCommand(FilmRankingContext context,
+            GraphicInterfaces interfaceGenerator,
+            IReader reader,
+            ICommandFactory factory)
         {
             this.context = context;
             this.interfaceGenerator = interfaceGenerator;
             this.reader = reader;
-            this.writer = writer;
+            this.writer = factory.CreateWriter("ConsoleWriter");
         }
 
         public void Execute()
         {
-            writer.Write(interfaceGenerator.RatingGeneralInstructions());
-            string filmTitle = Console.ReadLine();
+            this.writer.Write(this.interfaceGenerator.RatingGeneralInstructions());
+            string filmTitle = this.reader.Read();
 
-            writer.Write(interfaceGenerator.Rate());
-            double rate = double.Parse(reader.Read());
+            this.writer.Write(this.interfaceGenerator.Rate());
+            double rate = double.Parse(this.reader.Read());
 
             var movieToRate = this.context.Films.Single(x => x.Title == filmTitle);
             movieToRate.Rate = rate;
 
             this.context.SaveChanges();
 
-            writer.Write($"The rating of the moview {filmTitle} was changed to {rate}.");
+            this.writer.Write($"The rating of the moview {filmTitle} was changed to {rate}.");
         }
 
     }

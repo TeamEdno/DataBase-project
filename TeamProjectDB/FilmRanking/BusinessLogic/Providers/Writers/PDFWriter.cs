@@ -26,7 +26,6 @@ namespace FilmRanking.BusinessLogic.Providers.Parsers
                 {
                     Document doc = new Document(pdf);
                     doc.Add(new Paragraph(text));
-                    doc.Add(new Paragraph("-----------------------------------------------------------------"));
                 }
             }
         }
