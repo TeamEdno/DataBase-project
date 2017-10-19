@@ -15,7 +15,7 @@ namespace FilmRanking.Ninject
     {
         public override void Load()
         {
-            this.Bind<IFilmMakingContext>().To<FilmRankingContext>();
+            this.Bind<IFilmRankingContext>().To<FilmRankingContext>();
             this.Bind<IEngine>().To<Engine>().InSingletonScope();
             this.Bind<ICommandFactory>().To<CommandFactory>().InSingletonScope();
 

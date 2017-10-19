@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace FilmRanking.Data
 {
-    public class FilmRankingContext : DbContext, IFilmMakingContext
+    public class FilmRankingContext : DbContext, IFilmRankingContext
     {
         public FilmRankingContext()
             : base("FilmRankingConnection")

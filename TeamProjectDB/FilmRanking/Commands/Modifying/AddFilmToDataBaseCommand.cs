@@ -10,12 +10,12 @@ namespace FilmRanking.Commands.Modifying
 {
     public class AddFilmToDataBaseCommand: ICommand
     {
-        private IFilmMakingContext context;
+        private IFilmRankingContext context;
         private GraphicInterfaces interfaceGenerator;
         private IReader reader;
         private IWriter writer;
 
-        public AddFilmToDataBaseCommand(IFilmMakingContext context, GraphicInterfaces interfaceGenerator, IReader reader, IWriter writer)
+        public AddFilmToDataBaseCommand(IFilmRankingContext context, GraphicInterfaces interfaceGenerator, IReader reader, IWriter writer)
         {
             this.context = context;
             this.interfaceGenerator = interfaceGenerator;

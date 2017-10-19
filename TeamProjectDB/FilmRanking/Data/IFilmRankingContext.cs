@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace FilmRanking.Data
 {
-    public interface IFilmMakingContext
+    public interface IFilmRankingContext
     {
 
         IDbSet<Film> Films { get; set; }

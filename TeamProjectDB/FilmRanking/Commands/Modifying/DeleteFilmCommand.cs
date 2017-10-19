@@ -13,12 +13,12 @@ namespace FilmRanking.Commands.Modifying
     public class DeleteFilmCommand : ICommand
     {
 
-        private FilmRankingContext context;
+        private IFilmRankingContext context;
         private GraphicInterfaces interfaceGenerator;
         private IReader reader;
         private IWriter writer;
 
-        public DeleteFilmCommand(FilmRankingContext context,
+        public DeleteFilmCommand(IFilmRankingContext context,
             GraphicInterfaces interfaceGenerator, IReader reader, IWriter writer)
         {
             this.context = context;

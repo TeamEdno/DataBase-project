@@ -12,12 +12,12 @@ namespace FilmRanking.Commands.Listing
 {
     public class ListFilmCommand : ICommand
     {
-        private FilmRankingContext context;
+        private IFilmRankingContext context;
         private GraphicInterfaces interfaceGenerator;
         private IReader reader;
         private IWriter writer;
 
-        public ListFilmCommand(FilmRankingContext context,
+        public ListFilmCommand(IFilmRankingContext context,
             GraphicInterfaces interfaceGenerator, IReader reader, IWriter writer)
         {
             this.context = context;

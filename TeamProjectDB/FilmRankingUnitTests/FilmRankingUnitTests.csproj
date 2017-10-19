@@ -21,7 +21,6 @@
     <Folder Include="BusinessLogic\Providers\Writers\" />
     <Folder Include="BusinessLogic\Providers\Readers\" />
     <Folder Include="Commands\Modifying\" />
-    <Folder Include="Commands\Listing\" />
   </ItemGroup>
 
 </Project>
