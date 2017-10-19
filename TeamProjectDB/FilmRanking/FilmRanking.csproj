@@ -100,6 +100,7 @@
     <Compile Include="Commands\Modifying\CreateActorCommand.cs" />
     <Compile Include="Commands\Modifying\CreateFilmCommand.cs" />
     <Compile Include="Commands\Modifying\DeleteFilmCommand.cs" />
+    <Compile Include="Commands\Modifying\RateFilmCommand.cs" />
     <Compile Include="Data\FilmRankingContext.cs" />
     <Compile Include="Data\IFilmMakingContext.cs" />
     <Compile Include="GUI\GraphicInterfaces.cs" />
