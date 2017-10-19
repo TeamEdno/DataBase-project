@@ -10,7 +10,7 @@ namespace FilmRanking.Commands.Modifying
 {
     public class AddFilmToDataBaseCommand: ICommand
     {
-        private readonly IFilmMakingContext context;
+        private IFilmMakingContext context;
         private GraphicInterfaces interfaceGenerator;
         private IReader reader;
         private IWriter writer;

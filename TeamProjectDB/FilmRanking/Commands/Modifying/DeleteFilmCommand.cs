@@ -1,4 +1,5 @@
-﻿using FilmRanking.Commands.Contracts;
+﻿using FilmRanking.BusinessLogic.Providers.Contracts;
+using FilmRanking.Commands.Contracts;
 using FilmRanking.Data;
 using FilmRanking.GUI;
 using System;
@@ -9,28 +10,36 @@ using System.Threading.Tasks;
 
 namespace FilmRanking.Commands.Modifying
 {
-    class DeleteFilmCommand
+    public class DeleteFilmCommand : ICommand
     {
 
-        private readonly IFilmMakingContext context;
-        private readonly GraphicInterfaces interfaceGenerator;
+        private FilmRankingContext context;
+        private GraphicInterfaces interfaceGenerator;
+        private IReader reader;
+        private IWriter writer;
 
-        public DeleteFilmCommand(IFilmMakingContext context, GraphicInterfaces interfaceGenerator)
+        public DeleteFilmCommand(FilmRankingContext context,
+            GraphicInterfaces interfaceGenerator, IReader reader, IWriter writer)
         {
             this.context = context;
             this.interfaceGenerator = interfaceGenerator;
+            this.reader = reader;
+            this.writer = writer;
         }
 
-
-        public void RateFilm()
+        public void Execute()
         {
-            Console.WriteLine(interfaceGenerator.Title());
-            string filmTitle = Console.ReadLine();
+            writer.Write(interfaceGenerator.DeletingGeneralInstructions());
+            string filmTitle = reader.Read();
+
             var movietoRemove = this.context.Films.Single(x => x.Title == filmTitle);
             this.context.Films.Remove(movietoRemove);
             this.context.SaveChanges();
 
+            writer.Write($"Movie with title {filmTitle} was removed.");
         }
+
+        
     }
 }
 

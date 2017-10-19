@@ -46,6 +46,21 @@ Not qute sure how were gonna create pdfs yet.";
             return "Please enter data as requested below.";
         }
 
+        public string ListGeneralInstructions()
+        {
+            return "You can see top X movies from our collection! \nHow much is X?";
+        }
+
+        public string DeletingGeneralInstructions()
+        {
+            return "You can delete a movie.\nPlease type its title: ";
+        }
+
+        public string RatingGeneralInstructions()
+        {
+            return "You can change the rating of a movie.\nPlease type its title: ";
+        }
+
         public string Title()
         {
             return "Title: ";
@@ -74,6 +89,21 @@ Not qute sure how were gonna create pdfs yet.";
         public string SBio()
         {
             return "Short bio: ";
+        }
+
+        public string Name()
+        {
+            return "Name: ";
+        }
+
+        public string YEstablished()
+        {
+            return "Year established: ";
+        }
+
+        public string Trivia()
+        {
+            return "Trivia: ";
         }
 
         public string ToWhichFilm()

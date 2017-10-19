@@ -78,7 +78,6 @@
   <ItemGroup>
     <Compile Include="BusinessLogic\Engine.cs" />
     <Compile Include="BusinessLogic\Contracts\IEngine.cs" />
-    <Compile Include="BusinessLogic\Providers\Factories\Contracts\IFilmRankingFactory.cs" />
     <Compile Include="BusinessLogic\Providers\Parsers\CommandParser.cs" />
     <Compile Include="BusinessLogic\Providers\Factories\Contracts\ICommandFactory.cs" />
     <Compile Include="BusinessLogic\Providers\Contracts\IReader.cs" />
@@ -97,8 +96,6 @@
     <Compile Include="Commands\Modifying\AddDirectorToFilmCommand.cs" />
     <Compile Include="Commands\Modifying\AddFilmToDataBaseCommand.cs" />
     <Compile Include="Commands\Modifying\AddStudioToFilmCommand.cs" />
-    <Compile Include="Commands\Modifying\CreateActorCommand.cs" />
-    <Compile Include="Commands\Modifying\CreateFilmCommand.cs" />
     <Compile Include="Commands\Modifying\DeleteFilmCommand.cs" />
     <Compile Include="Commands\Modifying\RateFilmCommand.cs" />
     <Compile Include="Data\FilmRankingContext.cs" />

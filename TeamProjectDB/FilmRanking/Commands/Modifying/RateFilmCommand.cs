@@ -1,4 +1,6 @@
-﻿using FilmRanking.Data;
+﻿using FilmRanking.BusinessLogic.Providers.Contracts;
+using FilmRanking.Commands.Contracts;
+using FilmRanking.Data;
 using FilmRanking.GUI;
 using System;
 using System.Collections.Generic;
@@ -8,28 +10,37 @@ using System.Threading.Tasks;
 
 namespace FilmRanking.Commands.Modifying
 {
-    class RateFilmCommand
+    public class RateFilmCommand: ICommand
     {
-        private readonly IFilmMakingContext context;
-        private readonly GraphicInterfaces interfaceGenerator;
+        private FilmRankingContext context;
+        private GraphicInterfaces interfaceGenerator;
+        private IReader reader;
+        private IWriter writer;
 
-        public RateFilmCommand(IFilmMakingContext context, GraphicInterfaces interfaceGenerator)
+        public RateFilmCommand(FilmRankingContext context,
+            GraphicInterfaces interfaceGenerator, IReader reader, IWriter writer)
         {
             this.context = context;
             this.interfaceGenerator = interfaceGenerator;
+            this.reader = reader;
+            this.writer = writer;
         }
 
-
-        public void RateFilm()
+        public void Execute()
         {
-            Console.WriteLine(interfaceGenerator.Title());
+            writer.Write(interfaceGenerator.RatingGeneralInstructions());
             string filmTitle = Console.ReadLine();
-            Console.WriteLine(interfaceGenerator.Rate());
-            double rate = double.Parse(Console.ReadLine());
-            var rateMovie = this.context.Films.Single(x => x.Title == filmTitle);
-            rateMovie.Rate = rate;
+
+            writer.Write(interfaceGenerator.Rate());
+            double rate = double.Parse(reader.Read());
+
+            var movieToRate = this.context.Films.Single(x => x.Title == filmTitle);
+            movieToRate.Rate = rate;
+
             this.context.SaveChanges();
 
+            writer.Write($"The rating of the moview {filmTitle} was changed to {rate}.");
         }
+
     }
 }

@@ -10,7 +10,7 @@ namespace FilmRanking.Commands.Modifying
 {
     public class AddActorToFilmCommand :ICommand
     {
-        private readonly FilmRankingContext context;
+        private FilmRankingContext context;
         private GraphicInterfaces interfaceGenerator;
         private IReader reader;
         private IWriter writer;
@@ -25,7 +25,7 @@ namespace FilmRanking.Commands.Modifying
         }
         public void Execute()
         {
-            Console.WriteLine(interfaceGenerator.CreateGeneralInstructions());
+            writer.Write(interfaceGenerator.CreateGeneralInstructions());
 
             var actor = new Actor();
             writer.Write(interfaceGenerator.FName());
@@ -55,8 +55,9 @@ namespace FilmRanking.Commands.Modifying
             }
 
             currentFilm.Actors.Add(actor);
+            context.SaveChanges();
 
-            writer.Write($"Actor {actor.FirstName} {actor.LastName} is added to film {filmTitle}.");
+            writer.Write($"Actor {actor.FirstName} {actor.LastName} is added to movie {filmTitle}.");
 
         }
     }
