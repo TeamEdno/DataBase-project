@@ -20,8 +20,15 @@ namespace FilmRanking
     {
         static void Main()
         {
-            PDFWriter writer= new PDFWriter("../../../TextFiles/PDFReport.pdf");
-            writer.Write("text text text text text");
+            PDFWriter writer = new PDFWriter("../../../TextFiles/PDFReport.pdf");
+            StringBuilder text=new StringBuilder();
+            for(int i = 0; i <= 20; i++)
+            {
+                text.AppendLine("text text text text text");
+                text.AppendLine("________________________________________");
+            }
+
+            writer.Write(text.ToString());
 
 
             //JSONParser jsonParse = new JSONParser("../../../TextFiles/JSONFile.JSON");
