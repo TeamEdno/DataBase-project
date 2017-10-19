@@ -49,7 +49,7 @@ Not qute sure how were gonna create pdfs yet.";
 
         public string Genre()
         {
-            return "Title: ";
+            return "Genre: ";
         }
 
        

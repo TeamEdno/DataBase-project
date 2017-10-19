@@ -21,7 +21,7 @@ namespace FilmRanking.Models
         public int Id { get; set; }
 
         [Range(1.0, 5.0, ErrorMessage = "The rate is not in range [1:5]!")]
-        public ICollection<double> Rate { get; set; }
+        public double Rate { get; set; }
         
         public Genre Genre { get; set; }
 

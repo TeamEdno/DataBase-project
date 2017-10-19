@@ -99,7 +99,6 @@
     <Compile Include="Commands\Modifying\AddStudioToFilmCommand.cs" />
     <Compile Include="Commands\Modifying\CreateFilmCommand.cs" />
     <Compile Include="Commands\Modifying\DeleteFilmCommand.cs" />
-    <Compile Include="Commands\Modifying\RateFilmCommand.cs" />
     <Compile Include="Data\FilmRankingContext.cs" />
     <Compile Include="Data\IFilmMakingContext.cs" />
     <Compile Include="GUI\GraphicInterfaces.cs" />
@@ -126,6 +125,10 @@
     <Compile Include="Migrations\201710182323558_film rating to collection.cs" />
     <Compile Include="Migrations\201710182323558_film rating to collection.Designer.cs">
       <DependentUpon>201710182323558_film rating to collection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710191055200_rate to type double.cs" />
+    <Compile Include="Migrations\201710191055200_rate to type double.Designer.cs">
+      <DependentUpon>201710191055200_rate to type double.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Actor.cs" />
@@ -159,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710182323558_film rating to collection.resx">
       <DependentUpon>201710182323558_film rating to collection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710191055200_rate to type double.resx">
+      <DependentUpon>201710191055200_rate to type double.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

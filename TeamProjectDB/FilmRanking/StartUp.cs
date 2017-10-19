@@ -20,15 +20,15 @@ namespace FilmRanking
     {
         static void Main()
         {
-            PDFWriter writer = new PDFWriter("../../../TextFiles/PDFReport.pdf");
-            StringBuilder text=new StringBuilder();
-            for(int i = 0; i <= 20; i++)
-            {
-                text.AppendLine("text text text text text");
-                text.AppendLine("________________________________________");
-            }
+            //PDFWriter writer = new PDFWriter("../../../TextFiles/PDFReport.pdf");
+            //StringBuilder text=new StringBuilder();
+            //for(int i = 0; i <= 20; i++)
+            //{
+            //    text.AppendLine("text text text text text");
+            //    text.AppendLine("________________________________________");
+            //}
 
-            writer.Write(text.ToString());
+            //writer.Write(text.ToString());
 
 
             //JSONParser jsonParse = new JSONParser("../../../TextFiles/JSONFile.JSON");
@@ -38,30 +38,30 @@ namespace FilmRanking
 
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<FilmRankingContext, Configuration>());
 
-            //using (var context = new FilmRankingContext())
-            //{
-            //    context.Films.ToList();
+            using (var context = new FilmRankingContext())
+            {
+                context.Films.ToList();
 
-            //    //var studio = new Models.Studio();
-            //    //studio.Name = "PeshoEnt";
-            //    //studio.YearEstablished = 1987;
-            //    //context.Studios.Add(studio);
+                //var studio = new Models.Studio();
+                //studio.Name = "PeshoEnt";
+                //studio.YearEstablished = 1987;
+                //context.Studios.Add(studio);
 
-            //    //var director = new Models.Director();
-            //    //director.FirstName = "Pencho";
-            //    //director.LastName = "Kobadynski";
-            //    //director.YearBorn = 1980;
-            //    //context.Directors.Add(director);
+                //var director = new Models.Director();
+                //director.FirstName = "Pencho";
+                //director.LastName = "Kobadynski";
+                //director.YearBorn = 1980;
+                //context.Directors.Add(director);
 
-            //    //var film = new Film();
-            //    //film.Genre = Models.Enums.Genre.Action;
-            //    //film.Title = "Adventures of Little Mock";
-            //    //film.Director = director;
-            //    //film.Studio = studio;
-            //    //context.Films.Add(film);
+                //var film = new Film();
+                //film.Genre = Models.Enums.Genre.Action;
+                //film.Title = "Adventures of Little Mock";
+                //film.Director = director;
+                //film.Studio = studio;
+                //context.Films.Add(film);
 
-            //    //context.SaveChanges();
-            //}
+                //context.SaveChanges();
+            }
 
 
             //GraphicInterfaces interfaces = new GraphicInterfaces();
