@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FilmRanking.GUI;
+using FilmRanking.Commands.Modifying;
 
 namespace FilmRanking.BusinessLogic.Contracts
 {
@@ -27,12 +28,12 @@ namespace FilmRanking.BusinessLogic.Contracts
             switch (userChoice)
             {
                 case "1":
-                    this.CreateCommand();
+                    this.CreateFilmAndAddToDB();
                     break;
                 case "2":
                     this.ReadFile();
                     break;
-                case "3":
+                case "0":
                     Console.WriteLine("Exitted");
                     break;
                 default:
@@ -53,6 +54,19 @@ namespace FilmRanking.BusinessLogic.Contracts
             {
                 Console.WriteLine("\n creates a model based on the user input would be good to use a trycatch here \n");
                 this.CreateCommand();
+            }
+        }
+
+        private void CreateFilmAndAddToDB()
+        {
+            string input = reader.Read();
+            if (input == "1")
+            {
+                this.Run();
+            }
+            else
+            {
+                
             }
         }
 

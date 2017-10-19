@@ -17,9 +17,13 @@ namespace FilmRanking.GUI
         {
             return @"Hello!!!
 Choose an action:
-1-Add a movie to the database manually.
-2-Read a file.
-3-Exit.";
+1-Add a movie to the database.
+2-Add an actor to a movie.
+3-Add a director to a movie.
+4-Add a studio to a movie;
+5-Rate a movie.
+6-Delete a movie.
+0-Exit.";
         }
         public string CreateDatabaseManuallyInterface()
         {
@@ -39,7 +43,7 @@ Not qute sure how were gonna create pdfs yet.";
 
         public string CreateGeneralInstructions()
         {
-            return "Please enter the required data as requested below.";
+            return "Please enter data as requested below.";
         }
 
         public string Title()
@@ -72,6 +76,10 @@ Not qute sure how were gonna create pdfs yet.";
             return "Short bio: ";
         }
 
+        public string ToWhichFilm()
+        {
+            return "Please type the title of the film: ";
+        }
 
     }
 }

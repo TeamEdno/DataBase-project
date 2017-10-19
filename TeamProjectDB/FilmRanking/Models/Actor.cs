@@ -9,7 +9,8 @@ namespace FilmRanking.Models
 {
     public class Actor
     {
-        private ICollection<Film> films;    
+        private ICollection<Film> films;
+        
 
         public Actor()
         {

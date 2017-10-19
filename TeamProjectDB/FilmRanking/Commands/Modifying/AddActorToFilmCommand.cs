@@ -1,27 +1,46 @@
-﻿using FilmRanking.Commands.Contracts;
+﻿using FilmRanking.BusinessLogic.Providers.Contracts;
 using FilmRanking.Data;
+using FilmRanking.GUI;
+using FilmRanking.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FilmRanking.Commands.Modifying
 {
     public class AddActorToFilmCommand
     {
         private readonly FilmRankingContext context;
+        private GraphicInterfaces interfaceGenerator;
+        private IReader reader;
 
-        public AddActorToFilmCommand(FilmRankingContext context)
+        public AddActorToFilmCommand(FilmRankingContext context, GraphicInterfaces interfaceGenerator, IReader reader)
         {
             this.context = context;
+            this.interfaceGenerator = interfaceGenerator;
+            this.reader = reader;
         }
-        public void Execute(IList<string> parameters)
+        public void Execute(Actor actor)
         {
-            using (this.context)
+            Console.WriteLine(interfaceGenerator.ToWhichFilm());
+            var filmTitle = reader.Read();
+
+            Film currentFilm;
+            try
             {
-                // To be implemented...
+                currentFilm = context.Films.Where(f => f.Title == filmTitle).First();
+                currentFilm.Actors.Add(actor);
+
+                Console.WriteLine("Actor {0} {1} is added to film {2}.",
+                    actor.FirstName,
+                    actor.LastName,
+                    filmTitle);
             }
+            catch (Exception)
+            {
+                throw new Exception("Film with this title can't found in the database");
+            }
+
+            
         }
     }
 }

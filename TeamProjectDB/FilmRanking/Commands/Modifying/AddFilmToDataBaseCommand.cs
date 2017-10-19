@@ -13,7 +13,6 @@ namespace FilmRanking.Commands.Modifying
             this.context = context;
         }
 
-        
 
         public void AddToDB(Film film)
         {
