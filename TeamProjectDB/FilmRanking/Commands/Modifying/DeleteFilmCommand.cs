@@ -2,11 +2,7 @@
 using FilmRanking.Commands.Contracts;
 using FilmRanking.Data;
 using FilmRanking.GUI;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FilmRanking.Commands.Modifying
 {

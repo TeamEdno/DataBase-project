@@ -1,13 +1,7 @@
 ﻿using FilmRanking.BusinessLogic.Providers.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FilmRanking.GUI;
-using FilmRanking.Commands.Modifying;
-using FilmRanking.Data;
 using FilmRanking.BusinessLogic.Providers.Parsers;
+using FilmRanking.Data;
+using FilmRanking.GUI;
 
 namespace FilmRanking.BusinessLogic.Contracts
 {

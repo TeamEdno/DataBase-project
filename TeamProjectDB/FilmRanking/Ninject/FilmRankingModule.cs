@@ -1,14 +1,14 @@
 ﻿using FilmRanking.BusinessLogic.Contracts;
 using FilmRanking.BusinessLogic.Providers.Contracts;
+using FilmRanking.BusinessLogic.Providers.Factories;
+using FilmRanking.BusinessLogic.Providers.Parsers;
 using FilmRanking.BusinessLogic.Providers.Readers;
 using FilmRanking.BusinessLogic.Providers.Writers;
 using FilmRanking.Commands.Contracts;
-using FilmRanking.Commands.Modifying;
 using FilmRanking.Commands.Listing;
+using FilmRanking.Commands.Modifying;
 using FilmRanking.Data;
 using Ninject.Modules;
-using FilmRanking.BusinessLogic.Providers.Factories;
-using FilmRanking.BusinessLogic.Providers.Parsers;
 
 namespace FilmRanking.Ninject
 {

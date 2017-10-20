@@ -1,13 +1,9 @@
 ﻿using FilmRanking.BusinessLogic.Providers.Parsers.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FilmRanking.Data;
-using System.Xml;
 using FilmRanking.Models;
 using FilmRanking.Models.Enums;
+using System;
+using System.Xml;
 
 namespace FilmRanking.BusinessLogic.Providers.Parsers
 {

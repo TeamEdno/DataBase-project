@@ -4,10 +4,7 @@ using FilmRanking.Data;
 using FilmRanking.GUI;
 using FilmRanking.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FilmRanking.Commands.Modifying
 {

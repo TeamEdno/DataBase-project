@@ -2,7 +2,6 @@
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
-using System;
 
 namespace FilmRanking.BusinessLogic.Providers.Parsers
 {
