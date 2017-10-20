@@ -109,6 +109,7 @@
     <Compile Include="Commands\Listing\ListMoviesInPDF.cs" />
     <Compile Include="Commands\Modifying\AddActorToFilmCommand.cs" />
     <Compile Include="Commands\Modifying\AddDirectorToFilmCommand.cs" />
+    <Compile Include="Commands\Modifying\AddFilesToDatabaseCommand.cs" />
     <Compile Include="Commands\Modifying\AddFilmToDataBaseCommand.cs" />
     <Compile Include="Commands\Modifying\AddStudioToFilmCommand.cs" />
     <Compile Include="Commands\Modifying\DeleteFilmCommand.cs" />

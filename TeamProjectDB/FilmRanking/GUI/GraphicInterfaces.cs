@@ -24,6 +24,9 @@ Choose an action:
 4-Add a studio to a movie;
 5-Rate a movie.
 6-Delete a movie.
+7-List top movies.
+8-List movies in PDF.
+9-Enter info from files.
 0-Exit.";
         }
 
@@ -35,6 +38,11 @@ Choose an action:
         public string ListGeneralInstructions()
         {
             return "You can see top X movies from our collection! \nHow much is X?";
+        }
+
+        public string CreatePDFListOfTopMovies()
+        {
+            return "You can generate a pdf with top X movies from our collection! \nHow much is X?";
         }
 
         public string DeletingGeneralInstructions()

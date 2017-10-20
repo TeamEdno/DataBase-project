@@ -33,7 +33,7 @@ namespace FilmRanking.Ninject
             this.Bind<ICommand>().To<ListFilmCommand>().Named("ListFilm");
             this.Bind<ICommand>().To<DeleteFilmCommand>().Named("DeleteFilm");
             this.Bind<ICommand>().To<RateFilmCommand>().Named("RateFilm");
-
+            this.Bind<ICommand>().To<ListMoviesInPDF>().Named("ListMoviesInPDF");
         }
     }
 }

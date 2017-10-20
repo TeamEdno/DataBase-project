@@ -17,13 +17,15 @@ namespace FilmRanking.Commands.Listing
         private IReader reader;
         private IWriter writer;
 
-        public ListFilmCommand(IFilmRankingContext context,
-            GraphicInterfaces interfaceGenerator, IReader reader, IWriter writer)
+        public ListFilmCommand(FilmRankingContext context,
+            GraphicInterfaces interfaceGenerator,
+            IReader reader,
+            ICommandFactory factory)
         {
             this.context = context;
             this.interfaceGenerator = interfaceGenerator;
             this.reader = reader;
-            this.writer = writer;
+            this.writer = factory.CreateWriter("ConsoleWriter");
         }
 
         public void Execute()
